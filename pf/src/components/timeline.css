@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.timeline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  color: #121212;
+  font-family: 'Poppins', sans-serif;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: #000000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.timeline-heading::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(to right, #000000, transparent);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+.timeline-heading .emoji {
+  font-size: 2.8rem;
+}
+
+.timeline {
+  position: relative;
+  margin: 3rem auto;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background-color: #e0e0e0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    z-index: 0;
+  }
+
+/* Timeline tracker that fills as you scroll */
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 6px; /* Make it slightly wider than the background line */
+    background-color: #000000; /* Or any color that stands out */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    z-index: 1;
+    height: 5%; /* Starting at 0 height */
+    transition: height 0.2s ease-out; /* Faster transition: 0.5s -> 0.3s */
+  }
+  .timeline-container.scrolled-16 .timeline::before {
+    height: 20%;
+    visibility: visible;
+}
+
+.timeline-container.scrolled-33 .timeline::before {
+    height: 30%;
+    visibility: visible;
+}
+
+.timeline-container.scrolled-50 .timeline::before {
+    height: 45%;
+    visibility: visible;
+}
+
+.timeline-container.scrolled-66 .timeline::before {
+    height: 62%;
+    visibility: visible;
+}
+
+.timeline-container.scrolled-83 .timeline::before {
+    height: 77%;
+    visibility: visible;
+}
+
+.timeline-container.scrolled-100 .timeline::before {
+    height: 100%;
+    visibility: visible;
+}
+
+  
+  /* For mobile screens */
+
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-content {
+  padding: 25px 30px;
+  background-color: #f8f8f8;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-emoji {
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  font-size: 2rem;
+  background: #ffffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.timeline-date {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: #f0f0f0;
+  color: #333333;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.timeline-title {
+  margin: 0;
+  color: #000000;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.timeline-organization {
+  margin: 0;
+  color: #222222;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.timeline-organization a {
+  color: #222222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.timeline-organization a:hover {
+  color: #000000;
+}
+
+.timeline-organization a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.timeline-organization a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.timeline-description {
+  margin: 14px 0;
+  line-height: 1.8;
+  color: #333333;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.timeline-achievements {
+  margin: 14px 0;
+  padding-left: 20px;
+}
+
+.timeline-achievements li {
+  color: #222222;
+  margin-bottom: 8px;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+.timeline-achievements li::before {
+  content: "→";
+  position: absolute;
+  left: -18px;
+  color: #333333;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item.left .timeline-dot {
+    right: -49px; /* Position exactly on the timeline */
+  top: 30px; /* Fixed position relative to the timeline item */
+  position: absolute;
+  }
+  
+  .timeline-item.right .timeline-dot {
+    left: -49px; /* Position exactly on the timeline */
+  top: 30px; /* Fixed position relative to the timeline item */
+  position: absolute;
+  }
+/* Chat message style for timeline items */
+.timeline-item.left .timeline-content {
+  border-radius: 12px 12px 12px 0;
+}
+.timeline-content {
+    /* Keep existing styles */
+    position: relative;
+    /* Add this to isolate transforms: */
+    transform-style: preserve-3d; 
+  }
+
+.timeline-item.right .timeline-content {
+  border-radius: 12px 12px 0 12px;
+}
+
+.timeline-item.left .timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #f8f8f8;
+}
+
+.timeline-item.right .timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -15px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #f8f8f8;
+}
+
+/* For mobile view */
+@media screen and (max-width: 768px) {
+  .timeline::after, .timeline::before {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+        /* Keep existing styles */
+        position: relative;
+        }
+  
+  .timeline-item.right {
+    left: 0;
+  }
+  /* Override any inherited transforms for the dots */
+.timeline-dot {
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: 23px;
+  }
+  
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    border-radius: 12px 12px 12px 0;
+  }
+  
+  .timeline-item.left .timeline-content::before,
+  .timeline-item.right .timeline-content::before {
+    left: -15px;
+    border-right: 15px solid #f8f8f8;
+    border-left: 0;
+  }
+}
+
+/* Add subtle shape animations */
+.timeline-item:nth-child(odd) .timeline-content::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+  top: -40px;
+  right: -40px;
+  z-index: -1;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+  bottom: -40px;
+  left: -40px;
+  z-index: -1;
+  animation: pulse 4s infinite ease-in-out;
+  animation-delay: 2s;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+      left: 23px;
+      top: 30px;
+    }
+  }
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
