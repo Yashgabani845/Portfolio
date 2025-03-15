@@ -1,0 +1,130 @@
+.articles-section {
+    padding: 4rem 1rem;
+    background-color: white;
+    margin-top: 2rem;
+  }
+  
+  .articles-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .articles-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #333;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .title-icon {
+    width: 24px;
+    height: 24px;
+    color: #4e9ff5;
+  }
+  
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .article-card {
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .article-content {
+    padding: 1.5rem;
+  }
+  
+  .article-card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  
+  .article-description {
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  .article-date {
+    color: #666;
+    font-size: 0.875rem;
+  }
+  
+  .article-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1a1a1a;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .article-link:hover {
+    color: #4e9ff5;
+  }
+  
+  .external-link-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .articles-section {
+      padding: 3rem 1rem;
+    }
+  
+    .articles-title {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+  
+    .articles-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .articles-section {
+      padding: 2rem 0.5rem;
+    }
+  
+    .articles-title {
+      font-size: 1.5rem;
+    }
+  
+    .article-content {
+      padding: 1rem;
+    }
+  }

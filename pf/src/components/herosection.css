@@ -1,4 +1,4 @@
-/* Hero Section Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 .hero-section {
     min-height: 100vh;
     width: 100%;
@@ -8,7 +8,7 @@
     position: relative;
     overflow: hidden;
     background-color: #f8f9fa;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 100px 0 50px;
   }
   

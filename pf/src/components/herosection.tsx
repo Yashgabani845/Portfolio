@@ -1,7 +1,9 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
 import './herosection.css';
 import my from "../assets/images/my1.png";
 
@@ -10,7 +12,7 @@ function HeroSection() {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(100);
-  
+
   const phrases = [
     'Web Developer',
     'Generative AI Developer',
@@ -21,31 +23,27 @@ function HeroSection() {
     const typewriterEffect = () => {
       const currentPhrase = phrases[currentPhraseIndex];
       const shouldDelete = isDeleting;
-      
-      // Set typing speed based on action
+
       setTypingSpeed(isDeleting ? 50 : 100);
-      
+
       if (!shouldDelete && displayText === currentPhrase) {
-        // Pause at the end of typing
         setTimeout(() => setIsDeleting(true), 1500);
         return;
       }
-      
+
       if (shouldDelete && displayText === '') {
-        // Move to next phrase
         setIsDeleting(false);
         setCurrentPhraseIndex((currentPhraseIndex + 1) % phrases.length);
         return;
       }
-      
-      // Calculate new text
+
       const newText = shouldDelete
         ? currentPhrase.substring(0, displayText.length - 1)
         : currentPhrase.substring(0, displayText.length + 1);
-      
+
       setDisplayText(newText);
     };
-    
+
     const timer = setTimeout(typewriterEffect, typingSpeed);
     return () => clearTimeout(timer);
   }, [displayText, currentPhraseIndex, isDeleting, typingSpeed]);
@@ -68,38 +66,30 @@ function HeroSection() {
               that make a difference.
             </p>
             <div className="hero-buttons">
-              <button className="primary-button">View Projects</button>
-              <button className="secondary-button">Contact Me</button>
-            </div>
+  <Link href="/projects" passHref>
+    <button className="primary-button">View Projects</button>
+  </Link>
+  <Link href="/contact" passHref>
+    <button className="secondary-button">Contact Me</button>
+  </Link>
+</div>
           </div>
-          
+
           <div className="hero-image-container">
             <div className="image-frame">
-              <div className="image-placeholder">
-                {/* Replace with your actual image */}
-                <Image 
-                  src={my}
-                  alt="Yash - Computer Engineer" 
-                  width={400} 
-                  height={400}
-                  className="profile-image"
-                />
-              </div>
+              <Image 
+                src={my}
+                alt="Yash - Computer Engineer" 
+                width={400} 
+                height={400}
+                className="profile-image"
+              />
             </div>
-            <div className="shape shape-1"></div>
-            <div className="shape shape-2"></div>
-            <div className="shape shape-3"></div>
-            <div className="shape shape-4"></div>
           </div>
         </div>
       </div>
-      
-      {/* Animated background shapes */}
-      <div className="bg-shape circle"></div>
-      <div className="bg-shape square"></div>
-      <div className="bg-shape triangle"></div>
-      <div className="bg-shape rectangle"></div>
     </section>
   );
 }
+
 export default HeroSection;

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import "./navbar.css"
+import Achievement from './Achievements';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,7 +28,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <Link href="/" className="logo">
-          <h1>Portfolio</h1>
+          <h1>Yash Gabani👨‍💻</h1>
         </Link>
 
         {/* Desktop Navigation */}
@@ -37,13 +38,13 @@ export default function Navbar() {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
               <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <Link href="/skills">Skills</Link>
+              <Link href="/achievement">Achievement</Link>
+            </li>
+            <li>
+              <Link href="/article">Article</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
@@ -70,18 +71,18 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/about" onClick={() => setIsMenuOpen(false)}>
-              About
-            </Link>
-          </li>
-          <li>
             <Link href="/projects" onClick={() => setIsMenuOpen(false)}>
               Projects
             </Link>
           </li>
           <li>
-            <Link href="/skills" onClick={() => setIsMenuOpen(false)}>
-              Skills
+            <Link href="/achievement" onClick={() => setIsMenuOpen(false)}>
+              Achievement
+            </Link>
+          </li>
+          <li>
+            <Link href="/article" onClick={() => setIsMenuOpen(false)}>
+              Article
             </Link>
           </li>
           <li>
@@ -94,4 +95,3 @@ export default function Navbar() {
     </header>
   )
 }
-
