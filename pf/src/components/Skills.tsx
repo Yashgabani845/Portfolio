@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "./skills.css"; // Import the CSS file
-import { FaReact, FaNodeJs, FaPython, FaDatabase, FaCode, FaTools, FaBrain, FaJs, FaGit, FaCuttlefish } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaPython, FaDatabase, FaCode, FaBrain, FaJs, FaGit, FaCuttlefish } from "react-icons/fa";
 import { SiNextdotjs, SiMongodb, SiTypescript, SiTensorflow } from "react-icons/si";
 
 const skills = [

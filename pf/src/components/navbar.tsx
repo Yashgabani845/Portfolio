@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import "./navbar.css"
-import Achievement from './Achievements';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

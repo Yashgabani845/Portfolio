@@ -99,7 +99,7 @@ const Contact = () => {
       <div className="contact-header animate-on-scroll">
         <div className="contact-subtitle">
           <MessageSquare className="subtitle-icon" />
-          <p>Let's connect and create something amazing together</p>
+          <p>Let&apos;s connect and create something amazing together</p>
         </div>
       </div>
 
@@ -196,7 +196,7 @@ const Contact = () => {
             
             {formStatus === 'success' && (
               <div className="form-status success">
-                Message sent successfully! I'll get back to you soon.
+                Message sent successfully! I&apos;ll get back to you soon.
               </div>
             )}
             

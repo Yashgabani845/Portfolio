@@ -17,12 +17,12 @@ export default function Footer() {
       <div className="footer-content">
         {/* Left Section */}
         <div className="footer-left">
-          <h2 className="footer-title">Let's Connect!</h2>
+          <h2 className="footer-title">Let&apos;s Connect!</h2>
           <p className="footer-description">
             Feel free to reach out for collaborations, projects, or just a chat!
           </p>
           <a href="mailto:gabaniyash846@gmail.com" className="connect-button">
-            Let's Connect
+            Let&apos;s Connect
           </a>
         </div>
 

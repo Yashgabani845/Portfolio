@@ -4,14 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import './project.css';
 
-interface ProjectProps {
-  name: string;
-  github: string;
-  deployed: string;
-  tagline: string;
-  techStack: string[];
-  specialInfo: string;
-}
+
 
 const Project: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);

@@ -46,14 +46,14 @@ function HeroSection() {
 
     const timer = setTimeout(typewriterEffect, typingSpeed);
     return () => clearTimeout(timer);
-  }, [displayText, currentPhraseIndex, isDeleting, typingSpeed]);
+  }, [displayText, currentPhraseIndex, isDeleting, typingSpeed,phrases]);
 
   return (
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>Hello, I'm <span className="highlight">Yash</span></h1>
+            <h1>Hello, I&apos;m <span className="highlight">Yash</span></h1>
             <h2>Computer Engineering Student</h2>
             <div className="typewriter-container">
               <span className="typewriter-prefix">I am a </span>
